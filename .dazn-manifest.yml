@@ -1,0 +1,9 @@
+dazn-manifest: 0.0.1
+info:
+  name: cloudfront-game-day
+  description: AWS and Terraform game to learn how fe-router works
+  owner: bootstrap@dazn.com
+  technology:
+  - CloudFront
+  - Lambda
+  - S3
