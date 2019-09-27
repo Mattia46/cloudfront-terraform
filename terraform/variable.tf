@@ -27,3 +27,13 @@ variable "style" {
     description = "style.css file"
     default     = "/static/style.css"
 }
+
+variable "s3_origin_id" {
+    description = "s3 origin id"
+    default     = "mattiaS3Origin"
+}
+
+variable "origin_access_identity" {
+    description = "origin user access"
+    default     = "mattia-origin-access-identity"
+}
