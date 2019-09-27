@@ -13,7 +13,7 @@ resource "aws_s3_bucket_object" "main-obj" {
     key          = var.main
     source       = var.main_path
     etag         = "${filemd5(var.main_path)}"
-    content-type = "text/html"
+    content_type = "text/html"
 }
 
 resource "aws_s3_bucket_object" "second-obj" {
@@ -21,7 +21,7 @@ resource "aws_s3_bucket_object" "second-obj" {
     key          = var.second
     source       = var.second_path
     etag         = "${filemd5(var.second_path)}"
-    content-type = "text/html"
+    content_type = "text/html"
 }
 
 resource "aws_s3_bucket_object" "style-obj" {
@@ -29,5 +29,5 @@ resource "aws_s3_bucket_object" "style-obj" {
     key          = var.style
     source       = var.style_path
     etag         = "${filemd5(var.style_path)}"
-    content-type = "text/css"
+    content_type = "text/css"
 }
