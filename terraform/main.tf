@@ -1,6 +1,6 @@
 provider "aws" {
   region              = "us-east-1"
-  allowed_account_ids = ["621041455573"] # dazn-demo-one
+  allowed_account_ids = ["621041455573"]
 }
 
 resource "aws_s3_bucket" "b" {
@@ -9,22 +9,25 @@ resource "aws_s3_bucket" "b" {
 }
 
 resource "aws_s3_bucket_object" "main-obj" {
-    bucket = var.main
-    key    = var.main
-    source = var.main_path
-    etag   = "${filemd5(var.main_path)}"
+    bucket       = "${aws_s3_bucket.b.id}"
+    key          = var.main
+    source       = var.main_path
+    etag         = "${filemd5(var.main_path)}"
+    content-type = "text/html"
 }
 
 resource "aws_s3_bucket_object" "second-obj" {
-    bucket = var.second
-    key    = var.second
-    source = var.second_path
-    etag   = "${filemd5(var.second_path)}"
+    bucket       = "${aws_s3_bucket.b.id}"
+    key          = var.second
+    source       = var.second_path
+    etag         = "${filemd5(var.second_path)}"
+    content-type = "text/html"
 }
 
 resource "aws_s3_bucket_object" "style-obj" {
-    bucket = var.style
-    key    = var.style
-    source = var.style_path
-    etag   = "${filemd5(var.style_path)}"
+    bucket       = "${aws_s3_bucket.b.id}"
+    key          = var.style
+    source       = var.style_path
+    etag         = "${filemd5(var.style_path)}"
+    content-type = "text/css"
 }

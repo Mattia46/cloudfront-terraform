@@ -25,5 +25,5 @@ variable "style_path" {
 
 variable "style" {
     description = "style.css file"
-    default     = "style.css"
+    default     = "/static/style.css"
 }
